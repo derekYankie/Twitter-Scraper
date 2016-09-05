@@ -14,10 +14,12 @@ soup = BeautifulSoup(thepage, "html.parser")
 print(soup.findAll('span',{"class":"ProfileNav-label"}))
 print(soup.findAll('span',{"class":"ProfileNav-value"}))'''
 
-#Get both: Twitter handle and profile stats
+#Get both: Twitter handle and profile stats(tweets following, followers, and likes)
 person = soup.title.text
-prof_stats = ""
-for labels in soup.findAll('a',{"class":"ProfileNav-stat"}):
-    prof_stats = prof_stats + "," + labels.text
-    print person + prof_stats
+
+for line in soup.find('a'):
+    prof_stats = ""
+    for data in soup.findAll('a',{"class":"ProfileNav-stat"}):
+        prof_stats = prof_stats+ "," + data.text
+        print prof_stats
 
