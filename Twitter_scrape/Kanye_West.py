@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-
+#Scrape Kanye West twitter page
 theurl = "https://twitter.com/kanyewest"
 thepage = urllib2.urlopen(theurl)
 soup = BeautifulSoup(thepage, "html.parser")

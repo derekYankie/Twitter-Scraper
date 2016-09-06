@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-
+#Scrape Donald J. Trump twitter page
 theurl = "https://twitter.com/realDonaldTrump"
 thepage = urllib2.urlopen(theurl)
 soup = BeautifulSoup(thepage, "html.parser")
