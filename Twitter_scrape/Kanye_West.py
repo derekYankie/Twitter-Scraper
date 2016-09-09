@@ -18,19 +18,21 @@ print(soup.findAll('span',{"class":"ProfileNav-value"}))'''
 person = soup.title.text
 print person
 
-for line in soup.find('a'):
-    prof_stats = ""
-    for data in soup.findAll('a',{"class":"ProfileNav-stat"}):
-        prof_stats = prof_stats+ "," + data.text
-        print prof_stats
+#Get Profile stats
+profile_stats = soup.findAll("a", { "class":"ProfileNav-stat" })
+#ConvertUnicode string into the Python ASCII and remove /n character
+numbers = [d.text.encode('utf-8').split() for d in profile_stats]
+print numbers
 
-#Get 10 most recent tweets
 
+#Get 15 most recent tweets
+
+print "Their 15 most recent tweets... "
 
 t = 1
 for tweets in soup.findAll('div', {"class":"content"}):
 
-    if t <= 10:
+    if t <= 15:
         print (t)
         print(tweets.find('p').text)
         t = t + 1
