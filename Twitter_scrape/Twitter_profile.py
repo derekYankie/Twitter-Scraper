@@ -2,9 +2,10 @@ import urllib2
 from bs4 import BeautifulSoup
 
 #Accept user twitter profile link
-while True:
-	theurl = raw_input('Enter a twitter profile link \n(Ex1) https://twitter.com/[twitterhandle]\n(Ex2)Twitter handle: @nytimes @CNN @WSJ \n Link:https://twitter.com/nytimes: ')
-	if len(theurl)> 1 : break
+handle = raw_input("Please input your twitter handle")
+if(handle)>1:
+    theurl = "https://twitter.com/" + handle.strip('@')
+    #print theurl
 
 #Scrape selected twitter page
 thepage = urllib2.urlopen(theurl)
@@ -18,7 +19,7 @@ print person
 profile_stats = soup.findAll("a", { "class":"ProfileNav-stat"})
 #ConvertUnicode string into the Python ASCII and remove /n character
 stats = [d.text.encode('utf-8').split() for d in profile_stats]
-print "Stats>>",stats
+print "Stats >>",stats
 
 
 #Get 15 most recent tweets
