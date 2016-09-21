@@ -3,11 +3,10 @@ from bs4 import BeautifulSoup
 
 #Accept user twitter profile link
 while True:
-	theurl = raw_input('Enter a twitter profile link \n(Ex1) https://twitter.com/[twitterhandle]\n(Ex2)Twitter handle: @nytimes \n Link:https://twitter.com/nytimes: ')
+	theurl = raw_input('Enter a twitter profile link \n(Ex1) https://twitter.com/[twitterhandle]\n(Ex2)Twitter handle: @nytimes @CNN @WSJ \n Link:https://twitter.com/nytimes: ')
 	if len(theurl)> 1 : break
 
 #Scrape selected twitter page
-#theurl = "https://twitter.com/kanyewest"
 thepage = urllib2.urlopen(theurl)
 soup = BeautifulSoup(thepage, "html.parser")
 
