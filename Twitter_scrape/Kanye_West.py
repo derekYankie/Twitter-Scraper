@@ -1,12 +1,10 @@
 import urllib2
 from bs4 import BeautifulSoup
 
-while True:
-	theurl = raw_input('Enter a twitter profile link: ')
-	if len(theurl)> 1 : break
+
 
 #Scrape Kanye West twitter page
-#theurl = "https://twitter.com/kanyewest"
+theurl = "https://twitter.com/kanyewest"
 thepage = urllib2.urlopen(theurl)
 soup = BeautifulSoup(thepage, "html.parser")
 
