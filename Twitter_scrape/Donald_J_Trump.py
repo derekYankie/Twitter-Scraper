@@ -14,6 +14,9 @@ print (soup.title.text)
 print(soup.findAll('span',{"class":"ProfileNav-label"}))
 print(soup.findAll('span',{"class":"ProfileNav-value"}))
 
+
+
+
 '''for link in soup.findAll('span'):
     print(link.get('class="ProfileNav-label"'))
     print(link.text)'''
